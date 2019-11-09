@@ -37,7 +37,7 @@
 /*
  * 
  */
-/*
+
 int main() {
     int entrada,loop=1;    //entrada es una variable que me permite almacenar el dato aportado por el usuario, loop, me permite permanecer en el ciclo
     extern registros_t *puertos;
@@ -47,7 +47,7 @@ int main() {
     
     
     
-    
+    do{
     while (kbhit()){
         
         entrada=getchar ();
@@ -72,30 +72,10 @@ int main() {
             loop=0;
         }
         
+    }
     }while(loop);
     printf ("bye\n");
     return (EXIT_SUCCESS);
 }
-*/
-
-int main (void){
-    while(1){
-        while (kbhit())
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }
-}
+   

@@ -6,8 +6,9 @@
 #include <stdint.h>
 #include "registros.h"
 #include "hardware.h"
+#include "termlib.h"
 
-static char gpioxx[8]={"/sys/class/gpio/gpio17/direction","/sys/class/gpio/gpio4/direction","/sys/class/gpio/gpio18/direction","/sys/class/gpio/gpio23/direction","/sys/class/gpio/gpio24/direction","/sys/class/gpio/gpio25/direction","/sys/class/gpio/gpio22/direction","/sys/class/gpio/gpio27/direction"};
+static char *gpioxx[8]={"/sys/class/gpio/gpio17/direction","/sys/class/gpio/gpio4/direction","/sys/class/gpio/gpio18/direction","/sys/class/gpio/gpio23/direction","/sys/class/gpio/gpio24/direction","/sys/class/gpio/gpio25/direction","/sys/class/gpio/gpio22/direction","/sys/class/gpio/gpio27/direction"};
 
 
 int Direction_bits (void){
@@ -31,11 +32,6 @@ int Direction_bits (void){
         }
         fclose(handle_dir);
     }
-    
-    
-    
-    
-    
     
     
 }
@@ -64,9 +60,11 @@ int export_bits(void)
         else{
             printf("EXPORT file opened succesfully \n");
         }
+    fclose(handle_export);
     }   
     
-    fclose(handle_export);
+    
+    return 0;
 }
 
 int unexport_bits(void)
@@ -93,16 +91,18 @@ int unexport_bits(void)
         else{
             printf("UNEXPORT file opened succesfully \n");
         }
+    fclose(handle_unexport);
     }   
     
-    fclose(handle_unexport);
+    
+    return 0;
 }
 
 int valor_bit(int pos,int i){
     
     FILE *handle_value;
     int nWritten;
-    const char *estado[2]={'0','1'},;
+    const char *estado[2]={"0","1"};
     
     
     if((handle_value = fopen(gpioxx[pos],"w")) == NULL){
@@ -115,7 +115,7 @@ int valor_bit(int pos,int i){
             printf("Device successfully opened.Try again later.\n");
     }
     
-    nWritten=fputc(estado[i],handle_value);
+    nWritten=fputs(estado[i],handle_value);
     
     if (nWritten==-1){
            
@@ -124,8 +124,8 @@ int valor_bit(int pos,int i){
     }
     else{
         
-            printf("Write to file %s successfully done \n");
+            printf("Write to file pin %d successfully done \n",pos);
     }
     fclose(handle_value);
-
+    return 0;
 }
