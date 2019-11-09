@@ -37,6 +37,7 @@
 /*
  * 
  */
+/*
 int main() {
     int entrada,loop=1;    //entrada es una variable que me permite almacenar el dato aportado por el usuario, loop, me permite permanecer en el ciclo
     extern registros_t *puertos;
@@ -47,8 +48,10 @@ int main() {
     
     
     
-    while (kbhit())
+    while (kbhit()){
+        
         entrada=getchar ();
+        
         if (numvalido(entrada)) {   //usar macro de libreria
             bitSet(portA, entrada);
             printf (" El valor del puerto A es: 0x%x\n", (*puertos).px.a);
@@ -73,4 +76,26 @@ int main() {
     printf ("bye\n");
     return (EXIT_SUCCESS);
 }
+*/
 
+int main (void){
+    while(1){
+        while (kbhit())
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
