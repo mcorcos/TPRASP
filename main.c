@@ -23,6 +23,16 @@
 #define MaskT      0xFF//mascara que sirve para manipular los bits del puerto A
 #define MaskC      0x00
 /*
+ */
+#define D0  17
+#define D1  4
+#define D2  18
+#define D3  23
+#define D4  24
+#define D5  25
+#define D6  22
+#define D7  27
+/*
  * 
  */
 int main() {
