@@ -22,6 +22,7 @@
 #define numvalido(i)    ((i)>='0' && (i)<='7')
 #define MaskT      0xFF//mascara que sirve para manipular los bits del puerto A
 #define MaskC      0x00
+#define Val(i)  ((i)-'0')
 
 #define PRENDER 1
 #define APAGAR  0
@@ -55,7 +56,7 @@ int main() {
         if (numvalido(entrada)) {   //usar macro de libreria
             bitSet(portA, entrada);
             printf (" El valor del puerto A es: 0x%x\n", (*puertos).px.a);
-            valor_bit(entrada,PRENDER);
+            valor_bit(Val(entrada),PRENDER);
         }
         else if (ltrT(entrada)){
             MaskToggle(MaskT,portA);

@@ -8,8 +8,8 @@
 #include "hardware.h"
 #include "termlib.h"
 
-static char *gpioxx[8]={"/sys/class/gpio/gpio17/direction","/sys/class/gpio/gpio4/direction","/sys/class/gpio/gpio18/direction","/sys/class/gpio/gpio23/direction","/sys/class/gpio/gpio24/direction","/sys/class/gpio/gpio25/direction","/sys/class/gpio/gpio22/direction","/sys/class/gpio/gpio27/direction"};
-static char *gpiox[8]={"/sys/class/gpio/gpio17/value","/sys/class/gpio/gpio4/value","/sys/class/gpio/gpio18/value","/sys/class/gpio/gpio23/value","/sys/class/gpio/gpio24/value","/sys/class/gpio/gpio25/value","/sys/class/gpio/gpio22/value","/sys/class/gpio/gpio27/value"};
+static char *gpiox[8]={"/sys/class/gpio/gpio17/direction","/sys/class/gpio/gpio4/direction","/sys/class/gpio/gpio18/direction","/sys/class/gpio/gpio23/direction","/sys/class/gpio/gpio24/direction","/sys/class/gpio/gpio25/direction","/sys/class/gpio/gpio22/direction","/sys/class/gpio/gpio27/direction"};
+static char *gpioxx[8]={"/sys/class/gpio/gpio17/value","/sys/class/gpio/gpio4/value","/sys/class/gpio/gpio18/value","/sys/class/gpio/gpio23/value","/sys/class/gpio/gpio24/value","/sys/class/gpio/gpio25/value","/sys/class/gpio/gpio22/value","/sys/class/gpio/gpio27/value"};
 
 int direction_bits (void){
     
@@ -18,7 +18,7 @@ int direction_bits (void){
     
     for(i=0;i<8;i++){
         
-        if((handle_dir = fopen(gpioxx[i],"w")) == NULL){
+        if((handle_dir = fopen(gpiox[i],"w")) == NULL){
         printf("Cannot open DIRECTIN file.Try later\n");
         return (1);
         }
@@ -105,7 +105,7 @@ int valor_bit(int pos,int i){
     const char *estado[2]={"0","1"};
     
     
-    if((handle_value = fopen(gpiox[pos],"w")) == NULL){
+    if((handle_value = fopen(gpioxx[pos],"w")) == NULL){
         
             printf("Cannot open VALUE file.Try later\n");
             return (1);   
