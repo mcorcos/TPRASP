@@ -80,22 +80,22 @@ int bitGet (char port,int numbit){                  //funcion que devuelve el es
     int state;
     if (Is_portA(port) && numvalido(numbit)){      //se diferencia entre el puerto A y el puerto B,para tener facilel acceso
             switch (numbit){                        //se devuelve el esatdo del bit deseado
-                case '0':state=portd.bi.b0;
-                       return state;break;
-                case '1':state=portd.bi.b1;
-                       return state;break;
-                case '2':state=portd.bi.b2;
-                       return state;break;
-                case '3':state=portd.bi.b3;                        
-                       return state;break;
-                case '4':state=portd.bi.b4;                 
-                       return state;break;
-                case '5':state=portd.bi.b5;
-                       return state;break;
-                case '6':state=portd.bi.b6;
-                       return state;break;
-                case '7':state=portd.bi.b7;
-                       return state;break;
+                case '0':state=portd.bi.a0;
+                       break;
+                case '1':state=portd.bi.a1;
+                       break;
+                case '2':state=portd.bi.a2;
+                       break;
+                case '3':state=portd.bi.a3;                        
+                       break;
+                case '4':state=portd.bi.a4;                 
+                       break;
+                case '5':state=portd.bi.a5;
+                       break;
+                case '6':state=portd.bi.a6;
+                       break;
+                case '7':state=portd.bi.a7;
+                       break;
 
             }
         }
@@ -120,7 +120,8 @@ int bitGet (char port,int numbit){                  //funcion que devuelve el es
                        return state;break;
         }
      }  
-return 0;
+    printf("\n\n%d",state);
+    return state;
 }
 void bitToggle (char port, int numbit){ //funcion que utiliza otra funciones , porque cambia el el estado del bit por un 1 o un 0
     int state;

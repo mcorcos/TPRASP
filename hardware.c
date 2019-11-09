@@ -127,3 +127,4 @@ int valor_bit(int pos,int i){
     fclose(handle_value);
     return 0;
 }
+

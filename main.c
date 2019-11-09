@@ -36,7 +36,7 @@
  */
 
 int main() {
-    int entrada,loop=1,verif;    //entrada es una variable que me permite almacenar el dato aportado por el usuario, loop, me permite permanecer en el ciclo
+    int entrada,loop=1,verif,i;    //entrada es una variable que me permite almacenar el dato aportado por el usuario, loop, me permite permanecer en el ciclo
     extern registros_t *puertos;
     char portA='A';     //solo se desea modificar el puerto A
     printf ("Ingrese numero de bit o letra correspondiente\n");
@@ -51,44 +51,45 @@ int main() {
     do{
     while (kbhit()){
         
-        entrada=getchar ();
+        entrada=getchar (); 
         
         if (numvalido(entrada)) {   //usar macro de libreria
+            
             bitSet(portA, entrada);
             printf (" El valor del puerto A es: 0x%x\n", (*puertos).px.a);
             valor_bit(Val(entrada),PRENDER);
         }
         else if (ltrT(entrada)){
-            MaskToggle(MaskT,portA);
+            MaskToggle(MaskT,portA); 
             printf (" El valor del puerto A es: 0x%x\n", (*puertos).px.a);
+            
+            for(i=0;i<8;i++){
+            
+                 valor_bit(i,(bitGet('a',i+'0')));
+ 
+            }
+            
         }
         else if (ltrC(entrada)){
             MaskOff(MaskC,portA);
             printf (" El valor del puerto A es: 0x%x\n", (*puertos).px.a);
             
-            valor_bit(0,APAGAR);
-            valor_bit(1,APAGAR);
-            valor_bit(2,APAGAR);
-            valor_bit(3,APAGAR);
-            valor_bit(4,APAGAR);
-            valor_bit(5,APAGAR);
-            valor_bit(6,APAGAR);
-            valor_bit(7,APAGAR);
+            for(i=0;i<8;i++){
             
-        
+                 valor_bit(i,APAGAR);
+ 
+            }
         }
         else if (ltrS(entrada)){
             MaskOn(MaskT,portA);
             printf (" el valor del puerto A es: 0x%x\n", (*puertos).px.a);
-        
-            valor_bit(0,PRENDER);
-            valor_bit(1,PRENDER);
-            valor_bit(2,PRENDER);
-            valor_bit(3,PRENDER);
-            valor_bit(4,PRENDER);
-            valor_bit(5,PRENDER);
-            valor_bit(6,PRENDER);
-            valor_bit(7,PRENDER);
+            
+            for(i=0;i<8;i++){
+            
+                 valor_bit(i,PRENDER);
+ 
+            }
+             
         
         }
         else if (ltrQ(entrada)){
@@ -104,5 +105,6 @@ int main() {
     printf ("bye\n");
     return (EXIT_SUCCESS);
 }
-        
+       
+
    
