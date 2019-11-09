@@ -45,8 +45,7 @@ int export_bits(void)
     
     for(i=0; i<8; i++)
     {
-        if((handle_export = fopen("/sys/class/gpio/export","w")) == NULL);
-        {
+        if((handle_export = fopen("/sys/class/gpio/export","w")) == NULL){
             printf("Cannot open EXPORT file.Try later\n");
             return (1);
         }
@@ -76,8 +75,7 @@ int unexport_bits(void)
     
     for(i=0; i<8; i++)
     {
-        if((handle_unexport = fopen("/sys/class/gpio/unexport","w")) == NULL);
-        {
+        if((handle_unexport = fopen("/sys/class/gpio/unexport","w")) == NULL){
             printf("Cannot open UNEXPORT file.Try later\n");
             return (1);
         }
