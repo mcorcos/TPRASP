@@ -11,7 +11,7 @@
 static char *gpioxx[8]={"/sys/class/gpio/gpio17/direction","/sys/class/gpio/gpio4/direction","/sys/class/gpio/gpio18/direction","/sys/class/gpio/gpio23/direction","/sys/class/gpio/gpio24/direction","/sys/class/gpio/gpio25/direction","/sys/class/gpio/gpio22/direction","/sys/class/gpio/gpio27/direction"};
 
 
-int Direction_bits (void){
+int direction_bits (void){
     
     FILE *handle_dir;
     int nWritten,i;
