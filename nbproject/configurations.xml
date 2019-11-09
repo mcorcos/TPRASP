@@ -14,7 +14,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>extra.c</itemPath>
       <itemPath>hardware.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>registros.c</itemPath>
@@ -44,8 +43,6 @@
           <standard>3</standard>
         </cTool>
       </compileType>
-      <item path="extra.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="hardware.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="hardware.h" ex="false" tool="3" flavor2="0">
@@ -78,8 +75,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="extra.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="hardware.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="hardware.h" ex="false" tool="3" flavor2="0">

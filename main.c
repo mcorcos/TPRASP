@@ -42,7 +42,12 @@ int main() {
     extern registros_t *puertos;
     char portA='A';     //solo se desea modificar el puerto A
     printf ("Ingrese numero de bit o letra correspondiente\n");
-    do{
+    
+    
+    
+    
+    
+    while (kbhit())
         entrada=getchar ();
         if (numvalido(entrada)) {   //usar macro de libreria
             bitSet(portA, entrada);

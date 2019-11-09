@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/extra.o \
 	${OBJECTDIR}/hardware.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/registros.o
@@ -64,11 +63,6 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tprasp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tprasp ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/extra.o: extra.c
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -std=c99 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/extra.o extra.c
 
 ${OBJECTDIR}/hardware.o: hardware.c
 	${MKDIR} -p ${OBJECTDIR}
