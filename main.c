@@ -24,7 +24,7 @@
 #define MaskC      0x00
 /*
  */
-#define D0  17
+#define D0  "17"
 #define D1  4
 #define D2  18
 #define D3  23
@@ -32,6 +32,8 @@
 #define D5  25
 #define D6  22
 #define D7  27
+
+
 /*
  * 
  */
